@@ -8,4 +8,62 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-primary: oklch(70.7% 0.165 254.624);
+    --color-primary-highlight: oklch(0.427 0.16 258.323);
+    --color-primary-bg: oklch(0.912 0.044 250.42);
+}
+
+input[type="text"] {
+    border: 2px solid var(--color-primary);
+    border-radius: 0.25rem;
+    transition: border 100ms ease-out;
+    padding: 0 0.2rem;
+}
+
+input[type="text"]:focus {
+    border: 2px solid var(--color-primary-highlight);
+    border-radius: 0.25rem;
+    outline: none;
+}
+
+.button {
+    padding: 0.3rem 0.6rem;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 0.25rem;
+    transition: background-color 100ms ease-out;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--color-primary-highlight);
+}
+
+.button-inverted {
+    padding: 0.3rem 0.6rem;
+    background-color: transparent;
+    color: var(--color-primary-highlight);
+    border: 1px solid var(--color-primary);
+    border-radius: 0.25rem;
+    transition: background-color 100ms ease-out;
+    cursor: pointer;
+}
+
+.button-inverted:hover {
+    background-color: var(--color-primary-bg);
+}
+
+.options-menu {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    transition: opacity 100ms ease, transform 100ms ease;
+    z-index: -10;
+}
+
+.options-menu--opened {
+    opacity: 1;
+    transform: translateY(1.2rem) scale(1);
+    pointer-events: auto;
+    z-index: 20;
 }
