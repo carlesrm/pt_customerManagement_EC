@@ -15,6 +15,8 @@ Prueba técnica para empresa Essential Compositions
   - `php artisan db:create`
 - Ejecutar migraciones:
   - `php artisan migrate`
+- Compilar front:
+  - `npm run build`
 - Ejecutar aplicación (la url de la aplicación será [http://127.0.0.1:8000]([http://127.0.0.1:8000]))
   - `php artisan serve`
 
