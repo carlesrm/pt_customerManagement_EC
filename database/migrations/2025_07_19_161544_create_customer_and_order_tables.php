@@ -24,7 +24,7 @@ return new class extends Migration
             $table->date('delivery_date');
             $table->text('comment');
 
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 
@@ -33,7 +33,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers');
         Schema::dropIfExists('orders');
+        Schema::dropIfExists('customers');
     }
 };

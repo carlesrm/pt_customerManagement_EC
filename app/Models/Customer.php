@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Tests\Integration\Queue\Order;
 
 class Customer extends Model
 {
@@ -22,10 +21,10 @@ class Customer extends Model
 
     public static function createCustomer(string $name, string $address, string $email)
     {
-        $newCustomer = new Customer();
-        $newCustomer->name = $name;
-        $newCustomer->address = $address;
-        $newCustomer->email = $email;
-        return $newCustomer->save();
+        return self::create([
+            'name' => $name,
+            'address' => $address,
+            'email' => $email,
+        ]);
     }
 }

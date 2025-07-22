@@ -19,7 +19,7 @@
         </div>
         <div class="flex justify-between gap-x-3">
             <button type="submit" class="button">Crear Cliente</button>
-            <a href="{{ url()->previous() }}" class="button-inverted">Cancelar</a>
+            <a href="{{ route('home') }}" class="button-inverted">Cancelar</a>
         </div>
     </form>
 @endsection

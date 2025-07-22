@@ -19,13 +19,14 @@ Route::prefix('customers')->group(function () {
 });
 
 Route::prefix('orders')->group(function () {
-    Route::get('/{orderId}', [orderController::class, 'order'])->name('orders.order');
+    Route::get('/', [OrderController::class, 'orders'])->name('orders.index');
+    Route::get('/info/{orderId}', [OrderController::class, 'order'])->name('orders.order');
 
-    Route::get('/add', [orderController::class, 'addOrder'])->name('orders.add');
-    Route::post('/add', [orderController::class, 'addOrderPost'])->name('orders.add.post');
+    Route::get('/add', [OrderController::class, 'addOrder'])->name('orders.add');
+    Route::post('/add', [OrderController::class, 'addOrderPost'])->name('orders.add.post');
 
-    Route::get('/update', [orderController::class, 'updateOrder'])->name('orders.update');
-    Route::post('/update', [orderController::class, 'updateOrderPost'])->name('orders.update.post');
+    Route::get('/update/{orderId}', [OrderController::class, 'updateOrder'])->name('orders.update');
+    Route::post('/update/{orderId}', [OrderController::class, 'updateOrderPost'])->name('orders.update.post');
 
-    Route::get('/delete/{orderId}', [orderController::class, 'deleteOrder'])->name('orders.delete');
+    Route::delete('/delete/{orderId}', [OrderController::class, 'deleteOrder'])->name('orders.delete');
 });

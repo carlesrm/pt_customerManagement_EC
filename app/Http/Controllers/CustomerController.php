@@ -17,9 +17,9 @@ class CustomerController extends Controller
     public function customer(Request $request, $customer_id)
     {
         $customer = Customer::findOrFail($customer_id);
-        $customer_with_orders = $customer->with('orders')->get();
+        $customer_with_orders = $customer->with('orders')->first();
 
-        return view('customers.show-customer', compact('customer_with_orders'));
+        return view('customers.show-customer', ['customer' => $customer_with_orders]);
     }
 
     public function addCustomer(Request $request)

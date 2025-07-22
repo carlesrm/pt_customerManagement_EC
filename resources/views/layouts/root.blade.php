@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{--    TODO: Cambiar titulo página--}}
-        <title>Customer Management - @yield('title', 'Home')</title>
+        <title>Administración de Clientes - @yield('title', 'Home')</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,7 +20,7 @@
             </style>
         @endif
     </head>
-    <body class="relative min-h-screen bg-indigo-50 body-composition">
+    <body class="relative min-h-screen bg-blue-50 body-composition">
 
         @include('layouts.header')
 
